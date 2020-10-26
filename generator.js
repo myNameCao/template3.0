@@ -20,7 +20,8 @@ module.exports = (api, options, rootOptions) => {
       .filter((path) => path.startsWith("src/") || path.startsWith("public/"))
       .forEach((path) => delete files[path]);
   });
-  // 复制template模版
+  // 复制template模版  注意顺序
+
+  api.render("./init");
   api.render("./default");
-  api.render("./template");
 };

@@ -3,14 +3,12 @@ node_modules
 /dist
 
 
-
-
 # local env files
 .env.local
 .env.*.local
 
 
-public/index.html
+
 
 # Log files
 npm-debug.log*
