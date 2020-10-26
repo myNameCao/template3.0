@@ -1,0 +1,8 @@
+NODE_ENV = production
+
+
+VUE_APP_ENV = 'production'
+VUE_APP_HOST = 'http://localhost'
+VUE_APP_API_APPKEY = ''
+VUE_APP_API_APPSECRET = ''
+VUE_APP_APPID = ''
