@@ -1,6 +1,4 @@
-# template
-
-## Project setup
+# 晓羊项目
 
 ```
 yarn install
@@ -19,19 +17,29 @@ yarn serve
 yarn build
 ```
 
-### Lints and fixes files
+# axios
 
+## url 配置
+
+- 本项目 url 需要统一配置（lib/baseApi）
+
+- 分两种接口公共接口和私有接口（代码会自动识别添加 token）
+
+      公共接口: 不需要token
+      私有接口:需要token
+
+```js
+{
+  //  需要token 接口列表
+  privatePath: {},
+  //  不需要token 接口列表
+  publicPath: {
+    login: '/xy/login'
+  }
+}
 ```
 
-yarn lint
-
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### axios
+## 发送请求
 
 方法一（异步回调）
 
@@ -52,3 +60,5 @@ ajax({
   // todo something
 }
 ```
+
+## error 处理
