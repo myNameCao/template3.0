@@ -22,6 +22,6 @@ module.exports = (api, options, rootOptions) => {
   });
   // 复制template模版  注意顺序
 
-  api.render("./init");
+  api.render("./template");
   api.render("./default");
 };
