@@ -4,11 +4,11 @@ npm install -g @vue/cli
 
 # OR
 
-yarn global add @vue/cli
+yarn global add @vue/cli（推荐）
 
-# 远程 github
+# 远程 gitlab
 
-vue create --preset myNameCao/template <your-project-name>
+vue create --preset gitlab:my-gitlab-server.com:group/projectname --clone my-project
 
 # 本地测试
 
