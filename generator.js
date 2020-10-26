@@ -1,5 +1,3 @@
-const { ui } = require('inquirer')
-
 module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     // 命令
