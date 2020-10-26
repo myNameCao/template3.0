@@ -1,15 +1,28 @@
 # template
 
+## 安装 [@vue/cli](https://cli.vuejs.org/zh/guide)
+
 npm install -g @vue/cli
 
-# OR
+#### or
 
 yarn global add @vue/cli（推荐）
 
-# 远程 gitlab
+## 远程 gitlab
 
-vue create --preset gitlab:https://git.xiaoyangedu.com:frontend/templetefrond --clone <my-project>
+        vue create --preset gitlab:https://git.xiaoyangedu.com:frontend/templetefrond --clone <my-project>
 
-# 本地测试
+## 本地测试
 
-vue create --preset ../template <my-project>
+        vue create --preset ../template <my-project>
+
+### 目录结构
+
+```
+├── README.md
+├── generator.js # generator（可选）
+├── preset.js 前置默认
+├── template(模版文件)
+├── prompts.js # prompt 文件（可选 主要是客户端交互）
+└── default(. 文件)
+```
