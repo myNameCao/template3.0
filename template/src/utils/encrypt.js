@@ -1,5 +1,4 @@
-// 登录密码加密
-
+import Cookies from 'js-cookie'
 import CryptoJS from 'crypto-js'
 import { options } from '@conf'
 
@@ -22,4 +21,11 @@ export function decrypt(str) {
     mode: CryptoJS.mode.CBC
   })
   return decryptObj.toString(CryptoJS.enc.Utf8)
+}
+
+export const setCookie = (str, data, obj) => {
+  Cookies.set(str, data, { expires: 30, ...obj })
+}
+export const getCookie = str => {
+  return Cookies.get(str)
 }

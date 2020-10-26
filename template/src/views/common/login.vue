@@ -19,8 +19,11 @@
                 class="login-box-main"
                 style="margin-top:20px;"
               >
-                <input placeholder="账号" type="text" />
-                <input placeholder="密码" type="text" />
+                <input v-model="username" placeholder="账号" type="text" />
+                <input v-model="keyword" placeholder="密码" type="password" />
+                <button class="login-btn" @click="loginWeb">
+                  登陆
+                </button>
               </div>
             </div>
           </div>
@@ -38,18 +41,21 @@
   </div>
 </template>
 <script>
-  import { ajax } from '@utils'
+  import { ajax, encrypt, setCookie } from '@utils'
   export default {
     name: 'Login',
     data() {
       return {
         isShowLogin: false,
+        accountModel: null,
+        username: '',
+        keyword: '',
         enddate: new Date().getFullYear()
       }
     },
     created() {
       // 判断登录1
-      this.pcLoginFunc()
+      this.getAccountInfo()
     },
     destroyed() {
       window.clearTimeout(this.setTimeoutID)
@@ -59,70 +65,31 @@
       toXYIndex() {
         window.open('http://www.xiaoyangedu.com')
       },
-      pcLoginFunc() {
-        this.getAccountInfo()
-      },
-      onSuccess() {
-        this.vError = false
-        this.$refs.slideV.reset()
-      },
-      onFail() {
-        this.msg = ''
-      },
-      onRefresh() {
-        this.msg = ''
-      },
       // 获取所有校区信息
       getAccountInfo() {
+        let _this = this
         ajax({
           url: 'AccountsInfo',
           success(res) {
-            console.log(res)
+            _this.accountModel = res.data[0]
           }
         })
       },
-      setAccountInfo() {},
-
       // 登录
-      handleSubmit: function() {},
-
       async loginWeb() {
-        let params = {
+        let data = {
           AccountID: this.accountModel.SYSAccountID,
-          LoginId: this.formInline.user,
-          Password: this.xy.encrypt(this.formInline.password)
+          LoginId: this.username,
+          Password: encrypt(this.keyword)
         }
-
-        let res = await this.xy.post(this.xyApi + '/xy/login', params, true)
+        let res = await ajax({ type: 'post', url: 'login', data })
         if (res.success) {
           let token = res.data.token
-          let webSiteTitle = this.accountModel.AccountName
-          localStorage.setItem('webSiteTitle', webSiteTitle)
           if (token) {
-            this.xy.setCookie('.XYTOKEN', token, { expires: 30 })
-            localStorage.setItem('role', res.data.role)
-            // this.isParentNull = res.data.role === 4
-            this.xy.msgSuc('登录成功')
-            // Todo 登陆路由
-            this.$router.push('/xyHome/module')
-          } else {
-            this.xy.msgError('登录失败')
-          }
-        } else {
-          if (res.data !== null && res.data.type !== undefined) {
-            this.isParentNull = res.data.type === 4
-            this.isFKNull = res.data.type === 6
-          } else {
-            this.xy.msgError(res.msg)
+            setCookie('.XYTOKEN', token)
+            this.$router.push('/home')
           }
         }
-      },
-      handleClick() {
-        window.open('http://www.xiaoyangedu.com')
-      },
-      inputFocus(data) {
-        let index = data === 'user' ? 0 : 1
-        this.$set(this.inputFocusStatus, index, true)
       }
     }
   }
@@ -628,26 +595,10 @@
       margin: 0 auto 23px;
       position: relative;
     }
-
-    .login-box-main > .login-list > label {
-      display: inline-block;
-      width: 26px;
-      text-align: center;
-      vertical-align: bottom;
-      position: absolute;
-      top: 7px;
-      left: 5px;
-    }
-
-    .login-box-main > .login-list > label > i {
-      font-size: 26px;
-      color: #7fdc87;
-    }
-
-    .login-box-main > .login-list > input {
+    .login-box-main input {
       display: inline-block;
       height: 40px;
-      width: 320px;
+      width: 100%;
       margin: 0;
       padding: 0;
       padding-left: 35px;
@@ -659,15 +610,17 @@
     }
 
     .login-btn {
+      margin-top: 40px;
       width: 100%;
       height: 44px;
-      color: #fff !important;
+      color: #fff;
       font-size: 16px;
       letter-spacing: 6px;
       border-color: #4196ff !important;
       background: #4196ff;
       border-radius: 4px;
       box-shadow: none;
+      outline: none;
     }
 
     .login-btn:focus {

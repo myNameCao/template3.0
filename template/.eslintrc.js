@@ -2,8 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true,
-    jquery: true
+    node: true
   },
   extends: [
     'plugin:vue/base',
@@ -97,10 +96,10 @@ module.exports = {
     'vue/max-attributes-per-line': [
       1,
       {
-        singleline: 2,
+        singleline: 4,
         multiline: {
-          max: 1,
-          allowFirstLine: false
+          max: 4,
+          allowFirstLine: true
         }
       }
     ],

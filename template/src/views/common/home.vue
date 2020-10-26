@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    11111
+    晓羊欢迎。。。。。
   </div>
 </template>
 
