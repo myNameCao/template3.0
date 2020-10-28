@@ -1,4 +1,13 @@
 module.exports = (api, options, rootOptions) => {
+  api.render(files => {
+    Object.keys(files)
+      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
+      .forEach(path => delete files[path])
+  })
+
+  // 复制template模版  注意顺序
+  api.render('./template')
+  api.render('./default')
   api.extendPackage({
     // 命令
     scripts: {
@@ -24,12 +33,4 @@ module.exports = (api, options, rootOptions) => {
     api.injectImports(api.entryFile, `import './iview'`)
     api.render('./iview')
   }
-  api.render(files => {
-    Object.keys(files)
-      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
-      .forEach(path => delete files[path])
-  })
-  // 复制template模版  注意顺序
-  api.render('./template')
-  api.render('./default')
 }
