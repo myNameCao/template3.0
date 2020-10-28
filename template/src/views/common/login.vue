@@ -55,11 +55,13 @@
     },
     created() {
       // 判断登录1
+      console.log(this)
       this.getAccountInfo()
     },
-    destroyed() {
-      window.clearTimeout(this.setTimeoutID)
-      this.setTimeoutID = null
+    watch: {
+      accountModel(val) {
+        console.log(val)
+      }
     },
     methods: {
       toXYIndex() {
