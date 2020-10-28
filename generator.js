@@ -15,31 +15,14 @@ module.exports = (api, options, rootOptions) => {
       'lint-staged': '^10.4.2'
     }
   })
-  if (options.ui === 'iview') {
+  if (options.iview) {
     api.extendPackage({
       dependencies: {
         iview: '^3.5.4'
       }
     })
-    api.injectImports(
-      api.entryFile,
-      `import iView from 'iview'
-       import 'iview/dist/styles/iview.css'    
-       Vue.use(iView)`
-    )
-  }
-  if (options.ui === 'element-ui') {
-    api.extendPackage({
-      dependencies: {
-        'element-ui': '^2.13.2'
-      }
-    })
-    api.injectImports(
-      api.entryFile,
-      `import ElementUI from 'element-ui'
-       import 'element-ui/lib/theme-chalk/index.css'
-       Vue.use(ElementUI)`
-    )
+    api.injectImports(api.entryFile, `import './iview'`)
+    api.render('./iview')
   }
   api.render(files => {
     Object.keys(files)
@@ -47,7 +30,6 @@ module.exports = (api, options, rootOptions) => {
       .forEach(path => delete files[path])
   })
   // 复制template模版  注意顺序
-
   api.render('./template')
   api.render('./default')
 }

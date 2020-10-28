@@ -14,7 +14,7 @@ yarn global add @vue/cli（推荐）
 
 ## 本地测试
 
-        vue create --preset ../xy_project <my-project>
+        vue create --preset ./xy_project <my-project>
 
 ### 目录结构
 
