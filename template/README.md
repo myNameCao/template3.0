@@ -44,7 +44,9 @@ yarn build
 方法一（异步回调）
 
 ```js
-ajax({
+import axios from '@utils'
+
+axios({
   url: 'AccountsInfo',
   success(res) {
     // todo something
@@ -55,10 +57,24 @@ ajax({
 方法二（async）
 
 ```js
-;async () => {
+;axios () => {
   let { data } = await ajax({ url: 'AccountsInfo' })
   // todo something
 }
 ```
 
 ## error 处理
+
+## 工具类
+
+    axios 属于项目的工具类他是默认的函数
+
+```js
+import axios, { encrypt, setCookie } from '@utils'
+
+// todo something
+
+encrypt()
+
+setCookie()
+```

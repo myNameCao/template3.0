@@ -10,4 +10,5 @@ const router = new VueRouter({
 })
 // 注入拦截
 router.beforeEach(routerBeforeEach)
+
 export default router

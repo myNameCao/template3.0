@@ -24,7 +24,7 @@ instance.interceptors.request.use(requestSuccess, requestFail)
 instance.interceptors.response.use(responseSuccess, responseFail)
 
 // 过程组装请求
-export const ajax = async P => {
+export default async P => {
   return new Promise(resolve => {
     instance({
       method: P.type || 'get',

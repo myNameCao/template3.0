@@ -41,7 +41,7 @@
   </div>
 </template>
 <script>
-  import { ajax, encrypt, setCookie } from '@utils'
+  import axios, { encrypt, setCookie } from '@utils'
   export default {
     name: 'Login',
     data() {
@@ -55,13 +55,7 @@
     },
     created() {
       // 判断登录1
-      console.log(this)
       this.getAccountInfo()
-    },
-    watch: {
-      accountModel(val) {
-        console.log(val)
-      }
     },
     methods: {
       toXYIndex() {
@@ -70,7 +64,7 @@
       // 获取所有校区信息
       getAccountInfo() {
         let _this = this
-        ajax({
+        axios({
           url: 'AccountsInfo',
           success(res) {
             _this.accountModel = res.data[0]
@@ -84,7 +78,7 @@
           LoginId: this.username,
           Password: encrypt(this.keyword)
         }
-        let res = await ajax({ type: 'post', url: 'login', data })
+        let res = await axios({ type: 'post', url: 'login', data })
         if (res.success) {
           let token = res.data.token
           if (token) {
