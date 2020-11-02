@@ -4,9 +4,6 @@ module.exports = (api, options, rootOptions) => {
       .filter(path => path.startsWith('src/') || path.startsWith('public/'))
       .forEach(path => delete files[path])
   })
-  options.platform === 'mobile'
-    ? require('./mobile')(api, options)
-    : require('./pc')(api, options)
   // 复制template模版  注意顺序
   api.render('./template')
   api.render('./default')
@@ -26,4 +23,8 @@ module.exports = (api, options, rootOptions) => {
       'lint-staged': '^10.4.2'
     }
   })
+
+  options.platform === 'mobile'
+    ? require('./mobile')(api, options)
+    : require('./pc')(api, options)
 }
