@@ -32,6 +32,7 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^10.4.2",
     "postcss-px-to-viewport": "^1.1.1",
+    "vue-cli-plugin-vconsole": "^1.0.1",
     "vue-template-compiler": "^2.6.11"
   }
 }

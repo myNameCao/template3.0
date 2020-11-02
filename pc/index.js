@@ -4,7 +4,6 @@ module.exports = (api, options = {}, rootOptions = {}) => {
       iview: '^3.5.4'
     }
   })
-
   options.api.injectImports(api.entryFile, `import './iview'`)
   api.render('./template')
 }

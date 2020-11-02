@@ -23,7 +23,6 @@ module.exports = (api, options, rootOptions) => {
       'lint-staged': '^10.4.2'
     }
   })
-
   options.platform === 'mobile'
     ? require('./mobile')(api, options)
     : require('./pc')(api, options)

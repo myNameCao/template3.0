@@ -8388,6 +8388,18 @@ vary@~1.1.2:
   resolved "https://registry.npm.taobao.org/vary/download/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
+vconsole-webpack-plugin@^1.4.0:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/vconsole-webpack-plugin/-/vconsole-webpack-plugin-1.5.2.tgz#4c25b6cc51add03bb4e1562c4d3653431c89af60"
+  integrity sha512-v3goAnjsurFUy+qUmJCGjW+tzeKzlkrlbY8YnctSbhbrKiyC40hDeVFdGJvv7Drvd+w4xCQ1hJFZa5ESadmljQ==
+  dependencies:
+    vconsole "^3.3.4"
+
+vconsole@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/vconsole/-/vconsole-3.3.4.tgz#a7dacd8887b3d3e902e8d18425cda56c34e77f51"
+  integrity sha512-9yihsic96NPoMLQx/lCQwH9d89H0bbMW3LZPzo/t4yGQcS1X+vTCe9OHm1XSH7WNxzGDmcSwBiKLsFGwvJpQBg==
+
 vendors@^1.0.0:
   version "1.0.4"
   resolved "https://registry.npm.taobao.org/vendors/download/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
@@ -8406,6 +8418,13 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
+
+vue-cli-plugin-vconsole@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vconsole/-/vue-cli-plugin-vconsole-1.0.1.tgz#7f039a61557f98e2d7aba5f7dcbeab2b26308b71"
+  integrity sha512-Fw2aCkV7fkxtD5dTCjV78GQHaPcbv1rsYjqmQIucY7RkuB9/mZES82EjMkCQ4SdEjFPQPpoj7/WajHOEta9cxg==
+  dependencies:
+    vconsole-webpack-plugin "^1.4.0"
 
 vue-eslint-parser@^7.0.0:
   version "7.1.1"
