@@ -5,11 +5,5 @@ module.exports = [
     choices: ['pc', 'mobile'],
     message: 'Please choose a platform',
     default: 'pc'
-  },
-  {
-    name: `iview`,
-    type: 'confirm',
-    message: 'Add Iview ui?',
-    default: false
   }
 ]
