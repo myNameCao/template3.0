@@ -30,14 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-      <div class="content-nav-box">
-        <p v-cloak>
-          Copyright © 2016-{{ enddate }} 晓羊教育
-          <a @click="toXYIndex">www.xiaoyangedu.com</a> 版权所有
-        </p>
-      </div>
-    </div>
+    <div class="footer"></div>
   </div>
 </template>
 <script>
