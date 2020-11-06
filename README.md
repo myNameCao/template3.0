@@ -10,7 +10,7 @@ yarn global add @vue/cli（推荐）
 
 ## 远程 gitlab
 
-        vue create --preset gitlab:http://cxgitlab.xiaoyangedu.net:8010/strategy-learning/frondprojecttemplate  --clone <my-project>
+       vue create --preset myNameCao/template3.0  <my-project>
 
 ## 本地测试
 
