@@ -1,4 +1,4 @@
-# template
+# template 3.0
 
 ## 安装 [@vue/cli](https://cli.vuejs.org/zh/guide)
 
@@ -10,7 +10,7 @@ yarn global add @vue/cli（推荐）
 
 ## 远程 gitlab
 
-        vue create --preset gitlab:http://git.xiaoyangedu.com:frontend/templetefrond --clone <my-project>
+        vue create --preset gitlab:http://cxgitlab.xiaoyangedu.net:8010/strategy-learning/frondprojecttemplate  --clone <my-project>
 
 ## 本地测试
 
