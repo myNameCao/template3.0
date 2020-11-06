@@ -10,7 +10,7 @@ yarn global add @vue/cli（推荐）
 
 ## 远程 gitlab
 
-       vue create --preset myNameCao/template3.0  <my-project>
+       vue create --preset myNameCao/template3.0  run
 
 ## 本地测试
 
