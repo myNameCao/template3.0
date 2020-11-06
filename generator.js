@@ -5,7 +5,6 @@ module.exports = (api, options, rootOptions) => {
       .forEach(path => delete files[path])
   })
   // 复制template模版  注意顺序
-  api.render('./template')
   api.render('./default')
   api.extendPackage({
     // 命令
