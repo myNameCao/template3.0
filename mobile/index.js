@@ -8,5 +8,6 @@ module.exports = (api, options = {}, rootOptions = {}) => {
       'vue-cli-plugin-vconsole': '^1.0.1'
     }
   })
+  api.render('./template')
   // api.injectImports(api.entryFile, `import './vant'`)
 }
