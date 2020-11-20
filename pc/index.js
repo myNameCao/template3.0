@@ -5,6 +5,4 @@ module.exports = (api, options = {}, rootOptions = {}) => {
     }
   })
   api.render('./template')
-
-  // api.injectImports(api.entryFile, `import './iview'`)
 }
