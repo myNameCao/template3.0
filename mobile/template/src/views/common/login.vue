@@ -3,9 +3,7 @@
     <div class="content">
       <div class="titleShow">
         <image src="./images/logo.png" class="logo" />
-        <text class="title">
-          欢迎来到
-        </text>
+        <text class="title"> 欢迎来到 </text>
       </div>
       <input
         id="phoneNum"
@@ -27,9 +25,7 @@
     </div>
     <!-- <div class="tishi">手机验证码登录</div> -->
     <div class="gitBtn">
-      <div class="loginBtn" @tap="login">
-        登录
-      </div>
+      <div class="loginBtn" @tap="login">登录</div>
     </div>
   </div>
 </template>
@@ -54,8 +50,7 @@
   .login {
     width: 750px;
     height: 100%;
-    border: 1px red solid;
-    box-sizing: border-box;
+    background: url('./img/page-bg-airplane');
   }
   .content {
     width: 90%;
