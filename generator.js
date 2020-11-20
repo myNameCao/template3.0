@@ -1,5 +1,9 @@
 module.exports = (api, options, rootOptions) => {
   // 复制template模版  注意顺序
+  if (options.platform === 'updata') {
+    api.render('./default/src/utils')
+    return
+  }
   api.render('./default')
   api.extendPackage({
     // 命令
