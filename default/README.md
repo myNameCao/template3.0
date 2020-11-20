@@ -1,20 +1,23 @@
-# template
+# 下载项目依赖
 
-```
-yarn install
+yarn or npm install
 
-```
+# vscode 需要下载插件
 
-### Compiles and hot-reloads for development
+1. Prettier - Code formatter
+2. Git History
 
-```
+## Compiles and hot-reloads for development
+
+```shell
 yarn serve
 ```
 
-### Compiles and minifies for production
+## Compiles and minifies for production
 
-```
+```shell
 yarn build
+
 ```
 
 # axios
@@ -24,9 +27,8 @@ yarn build
 - 本项目 url 需要统一配置（lib/baseApi）
 
 - 分两种接口公共接口和私有接口（代码会自动识别添加 token）
-
-      公共接口: 不需要token
-      私有接口:需要token
+  公共接口: 不需要 token
+  私有接口:需要 token
 
 ```js
 {
@@ -62,6 +64,21 @@ axios({
   // todo something
 }
 ```
+
+方法三:（then)
+
+```js
+axios({ url: 'AccountsInfo' }).then(res => {
+  // todo something
+})
+```
+
+请求数据
+
+- data 只包含请求业务参数
+- token 会根据接口注册的位置 自动添加
+- loading 当页面发送请求时，需要 loadind 添加`true`, 默认不 loaing,请求完成自动关闭
+- success 成功后的逻辑
 
 ## error 处理
 
