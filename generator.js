@@ -1,5 +1,10 @@
 module.exports = (api, options, rootOptions) => {
   // 复制template模版  注意顺序
+  api.render(files => {
+    Object.keys(files)
+      .filter(path => path.startsWith('src/') || path.startsWith('public/'))
+      .forEach(path => delete files[path])
+  })
   if (options.platform === 'updata') {
     api.render('./default/src/utils')
     return
