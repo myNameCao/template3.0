@@ -1,13 +1,12 @@
 module.exports = (api, options = {}, rootOptions = {}) => {
   api.extendPackage({
     dependencies: {
-      vant: '^2.10.11'
+      vant: '^3.0.0-beta.8'
     },
     devDependencies: {
       'postcss-px-to-viewport': '^1.1.1',
       'vue-cli-plugin-vconsole': '^1.0.1'
     }
   })
-  api.injectImports(api.entryFile, `import './vant'`)
-  api.render('./template')
+  // api.injectImports(api.entryFile, `import './vant'`)
 }

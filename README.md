@@ -16,13 +16,14 @@ yarn global add @vue/cli（推荐）
 
         vue create --preset ./xy_project <my-project>
 
+
 ### 目录结构
 
 ```
 ├── README.md
 ├── generator.js # generator（可选）
 ├── preset.js 前置默认
-├── template(模版文件)
+├── default(模版文件)
 ├── prompts.js # prompt 文件（可选 主要是客户端交互）
 └── default(. 文件)
 ```
