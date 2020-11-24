@@ -50,7 +50,6 @@
   .login {
     width: 750px;
     height: 100%;
-    background: url('./img/page-bg-airplane');
   }
   .content {
     width: 90%;
