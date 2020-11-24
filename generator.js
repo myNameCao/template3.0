@@ -1,5 +1,5 @@
 module.exports = (api, options, rootOptions) => {
-  // 复制template模版  注意顺序
+  // 删除  注意顺序
   api.render(files => {
     Object.keys(files)
       .filter(path => path.startsWith('src/') || path.startsWith('public/'))
