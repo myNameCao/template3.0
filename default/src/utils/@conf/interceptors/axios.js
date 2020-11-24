@@ -9,7 +9,7 @@ export const requestSuccess = res => {
   if (list.length) loading()
   res.url = baseApi.privatePath[res.url] || baseApi.publicPath[res.url]
   if (baseApi.privatePath[res.url]) {
-    res.headers['XYTOKEN'] = Cookies.get('.XYTOKEN')
+    res.headers['token'] = Cookies.get('token')
   }
   return res
 }
